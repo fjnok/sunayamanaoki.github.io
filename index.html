@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>ログイン機能</title>
+    <link rel="stylesheet" href="stlye.css">
+  </head>
+  <body>
+    <div class="top">
+      <h2>HTML CSS JS でてきとうにログイン機能</h2>
+      <p>今回はログイン機能の概念だけを実装したのでサーバに接続もしてないしデータベースも使用してないので実用性はない</p>
+     
+        <li>名前：nok</li>
+        <li>パスワード：1234</li>
+      
+    </div>
+    <div class="login-page">
+      <div class="form">
+        <form class="register-form">
+          <input type="text" placeholder="名前">
+          <input type="text" placeholder="パスワード">
+          <input type="text" placeholder="メールアドレス">
+          <button>作成</button>
+          <p class="message">すでに登録してる？<a href="#">ログイン</a></p>
+        </form>
+        <form class="login-form">
+          <input type="text" placeholder="名前" id="name1" >
+          <input type="password" placeholder="パスワード" id="passward1">
+          <button onclick="getInfo()">ログイン</button>
+          <p class="message">登録されてない？<a href="#">登録</a></p>
+        </form>
+      </div>
+
+    </div>
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js
+    '>
+    </script>
+    <script>
+    
+      function getInfo(){
+        const name= document.getElementById('name1').value;
+      const passward = document.getElementById('passward1').value;
+        console.log(name);
+        if(name==="nok"&&passward==="1234"){
+         window.open('login.html');
+
+      }else{
+        window.open('log.html');
+      }
+        
+      };
+
+    </script>
+    <script>
+      $('.message a').click(function(){
+        $('form').animate({height:"toggle",opacity:"toggle"},"slow");
+      });
+    </script>
+  </body>
+
+</html>
